@@ -102,6 +102,11 @@ class Pages extends Model
         }
     }
 
+    public function __toString()
+    {
+        return '';
+    }
+
     /**
      * Ensure consistancy
      */

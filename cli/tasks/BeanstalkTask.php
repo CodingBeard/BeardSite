@@ -40,15 +40,11 @@ class BeanstalkTask extends \Phalcon\CLI\Task
 
             $details = $job->getBody();
 
-            echo $details['key'] . PHP_EOL;
-
             if ($details['key'] != $this->config->beanstalk->key) {
                 $job->release();
                 sleep(1);
                 continue;
             }
-
-            echo 'here' . PHP_EOL;
 
             /**
              * If fatal error or execption, remove job and log error

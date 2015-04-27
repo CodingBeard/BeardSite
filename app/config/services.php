@@ -8,6 +8,8 @@ use CodingBeard\DispatchingExceptionHandler;
 use CodingBeard\Forms\FormBuilder;
 use CodingBeard\Emails\SiteEmails;
 use Google\Captcha;
+use models\Contents;
+use models\Pages;
 use Phalcon\Cache\Backend\File;
 use Phalcon\Cache\Frontend\Output;
 use Phalcon\Crypt;
@@ -68,11 +70,11 @@ $di->set('dispatcher', function () use ($di, $module) {
     $errors = new DispatchingExceptionHandler();
     $eventsManager->attach('dispatch', $errors);
 
-    $security = new Acl($di, $module);
-    $eventsManager->attach('dispatch', $security);
-
     $assets = new Assets($di, $module);
     $eventsManager->attach('dispatch', $assets);
+
+    $security = new Acl($di, $module);
+    $eventsManager->attach('dispatch', $security);
 
     /*
      * Filter and standardize controller/action names to make case insensitive and allow for hyphens
@@ -235,8 +237,12 @@ $di->set('emails', function () {
 }, true);
 
 $di->set('queue', function () use ($config) {
-    return new BeanstalkWithSerialize(array(
+    return new BeanstalkWithSerialize([
         'host' => $config->beanstalk->host
-    ));
+    ]);
+}, true);
+
+$di->set('contents', function () {
+    return new Contents();
 }, true);
 

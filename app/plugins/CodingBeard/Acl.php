@@ -142,7 +142,8 @@ class Acl extends Plugin
             }
         }
         $redirect = '?continue=' . substr($_SERVER['REQUEST_URI'], 1);
-        return $auth->redirect('login/' . $redirect, 'error', 'You do not have the rights to access that page.');
+        $auth->redirect('login/' . $redirect, 'error', 'You do not have the rights to access that page.');
+        return false;
     }
 
 }

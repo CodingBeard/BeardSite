@@ -282,7 +282,7 @@ class PagesController extends ControllerBase
     {
         $content = Contents::findFirstById($content_id);
         if (!$content) {
-            $this->auth->redirect('admin/pages', 'error', 'Invalid Page ID.');
+            return $this->auth->redirect('admin/pages', 'error', 'Invalid Page ID.');
         }
         $page = $content->pages;
         $content->delete();
