@@ -148,6 +148,7 @@ return new \Phalcon\Config([
     ],
     'beanstalk'    => [
         'host' => '127.0.0.1',
+        'key'  => 'BeardSite',
     ],
     'pagecontents' => [
         'allowVolt' => false,
