@@ -11,12 +11,15 @@ nav {
     height: 100%;
   }
 
-  a { color: $navbar-link-color; }
-
-  @media #{$large-and-up} {
-    a.button-collapse { display: none; }
+  a {
+    color: $navbar-link-color;
   }
 
+  @media #{$large-and-up} {
+    a.button-collapse {
+      display: none;
+    }
+  }
 
   a.button-collapse {
     float: left;
@@ -50,10 +53,10 @@ nav {
       padding: 0;
     }
   }
-  
+
   .logo {
-	  height: 45px;
-	  width: auto;
+    height: 45px;
+    width: auto;
   }
 
   ul {
@@ -65,7 +68,7 @@ nav {
       @include transition(background-color .3s);
 
       &:hover, &.active {
-        background-color: rgba(0,0,0,.1);
+        background-color: rgba(0, 0, 0, .1);
       }
     }
     a {
@@ -73,9 +76,12 @@ nav {
       color: $navbar-link-color;
       display: inline-block;
       padding: 0px 15px;
-	  &:hover {
-		  color: $navbar-link-color;
-	  }
+      &:hover {
+        color: $navbar-link-color;
+      }
+      &.active {
+        background-color: rgba(0, 0, 0, .1);
+      }
     }
 
     &.left {
@@ -105,10 +111,12 @@ nav {
       left: 0;
 
       i {
-        color: rgba(255,255,255,.7);
+        color: rgba(255, 255, 255, .7);
         @include transition(color .3s);
       }
-      &.active i { color: #fff; }
+      &.active i {
+        color: #fff;
+      }
       &.active {
         @include transform(translateY(0));
       }
@@ -118,24 +126,29 @@ nav {
 
 }
 
+.is-sticky > nav {
+  background-color: rgba($primary-color, 0.8);
+  @include transition(background-color 1s);
+}
+
 .side-nav {
-	overflow-y: auto;
+  overflow-y: auto;
 }
 
 .supernav {
-	background-color: $supernav-background-color;
-	height: $supernav-height;
-	font-size: $supernav-font-size;
-	color: $supernav-text-color;
+  background-color: $supernav-background-color;
+  height: $supernav-height;
+  font-size: $supernav-font-size;
+  color: $supernav-text-color;
 
-	a {
-		color: $supernav-text-color;
-	}
-	
-	a:hover {
-		color: $supernav-text-hover-color;
-		@include transition(color .2s);
-	}
+  a {
+    color: $supernav-text-color;
+  }
+
+  a:hover {
+    color: $supernav-text-hover-color;
+    @include transition(color .2s);
+  }
 }
 
 // Fixed Navbar
@@ -148,6 +161,7 @@ nav {
     position: fixed;
   }
 }
+
 @media #{$medium-and-up} {
   nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i {
     height: $navbar-height;

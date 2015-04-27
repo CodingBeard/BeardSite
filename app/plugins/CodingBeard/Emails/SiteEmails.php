@@ -30,16 +30,8 @@ class SiteEmails extends Component
      */
     public function render($folder, $file, $variables, $testView = false)
     {
-        $view = clone $this->view;
-        $view->setViewsDir(__DIR__ . '/templates/');
-        foreach ($variables as $key => $value) {
-            $view->setVar($key, $value);
-        }
-        $view->start();
-        $view->setRenderLevel(View::LEVEL_ACTION_VIEW);
-        $view->render($folder, $file);
-        $view->finish();
-        $content = $view->getContent();
+        $this->view->setViewsDir(__DIR__ . '/templates/');
+        $content = $this->view->getRender($folder, $file, $variables);
 
         $inliner = new CssToInlineStyles();
         $inliner->setCSS(file_get_contents(__DIR__ . '/templates/layouts/style.css'));

@@ -28,7 +28,7 @@
       </div>
     </div>
   </div>
-  <div class="container">
+  <div id="projects" class="container section scrollspy">
     <div class="row">
       <div class="col s12">
         <h2 class="header center">Projects</h2>
@@ -144,7 +144,8 @@
 {% block javascripts %}
   <script type="text/javascript">
     $(function () {
-
+      $('nav').sticky({topSpacing: 0});
+      $('.scrollspy').scrollSpy();
     });
   </script>
 {% endblock %}

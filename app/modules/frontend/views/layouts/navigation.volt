@@ -20,14 +20,22 @@
               <ul id="dropdown" class="dropdown-content">
                 {% for child in navlink.children %}
                   <li>
-                    <a href="{{ url(child.link) }}">{{ child.label }}</a>
+                    {% if child.link[0] == '#' %}
+                      <a href="{{ child.link }}">{{ child.label }}</a>
+                    {% else %}
+                      <a href="{{ url(child.link) }}">{{ child.label }}</a>
+                    {% endif %}
                   </li>
                 {% endfor %}
               </ul>
             </li>
           {% else %}
             <li>
-              <a href="{{ url(navlink.link) }}">{{ navlink.label }}</a>
+              {% if navlink.link[0] == '#' %}
+                <a href="{{ navlink.link }}">{{ navlink.label }}</a>
+              {% else %}
+                <a href="{{ url(navlink.link) }}">{{ navlink.label }}</a>
+              {% endif %}
             </li>
           {% endif %}
         {% endfor %}

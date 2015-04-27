@@ -109,17 +109,9 @@ class FormBuilder extends Component
      */
     public function renderFile($file, $variables)
     {
-        $view = clone $this->formview;
-        $view->setViewsDir(__DIR__ . '/');
-        foreach ($variables as $key => $value) {
-            $view->setVar($key, $value);
-        }
-        $view->start();
-        $view->setRenderLevel(View::LEVEL_ACTION_VIEW);
-        $view->render('templates', $file);
-        $view->finish();
+        $this->formview->setViewsDir(__DIR__ . '/');
 
-        return $view->getContent();
+        return $this->formview->getRender('templates', $file, $variables);
     }
 
     /**

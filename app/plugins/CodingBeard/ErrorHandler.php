@@ -13,9 +13,8 @@
 namespace CodingBeard;
 
 use Exception;
-use Phalcon\Mvc\User\Component;
 
-class ErrorHandler extends Component
+class ErrorHandler
 {
 
     /**
