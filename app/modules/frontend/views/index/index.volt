@@ -20,19 +20,19 @@
   <div id="page-top" class="scrollspy">
     <div class="section no-pad-bot" id="index-banner">
       <div class="container">
-        <h2 class="header center orange-text">CodingBeard</h2>
+        <h2 class="header center" style="color: #CBCBC8;">CodingBeard</h2>
 
         <div class="row center">
           <h5 class="header col s12 light">No stubble, just good code.</h5>
         </div>
         <div class="row center">
-          <a href="https://github.com/CodingBeard" class="btn-large orange">Github</a>
+          <a href="https://github.com/CodingBeard" class="btn-large" style="background: #6782A0;">Github</a>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="red accent-1">
+  <div style="background: #7f7159;">
     <div id="projects" class="section container scrollspy">
       <div class="row">
         <div class="col s12">
@@ -72,11 +72,11 @@
     </div>
   </div>
 
-  <div class="progress no-pad red accent-2" style="margin: 0;">
-    <div class="indeterminate blue accent-2"></div>
+  <div class="progress no-pad brown" style="margin: 0;">
+    <div class="indeterminate grey"></div>
   </div>
 
-  <div class="blue accent-1">
+  <div style="background: #6782a0;">
     <div id="languages" class="section container scrollspy">
       <div class="row">
         <div class="col s12">
@@ -108,11 +108,11 @@
     </div>
   </div>
 
-  <div class="progress no-pad blue accent-2" style="margin: 0;">
-    <div class="indeterminate pink accent-2"></div>
+  <div class="progress no-pad blue" style="margin: 0;">
+    <div class="indeterminate grey"></div>
   </div>
 
-  <div class="pink accent-1">
+  <div style="background: #cbcbc8;">
     <div id="about-myself" class="section container scrollspy">
       <div class="row">
         <div class="col s12">
