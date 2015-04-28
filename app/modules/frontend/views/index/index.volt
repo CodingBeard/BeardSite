@@ -11,7 +11,7 @@
 {% endblock %}
 
 {% block header %}
-<div id="page-top" class="scrollspy"></div>
+  <div id="page-top" class="scrollspy"></div>
   {% include "layouts/header.volt" %}
   {% include "layouts/navigation.volt" %}
 {% endblock %}
@@ -31,121 +31,121 @@
       </div>
     </div>
   </div>
-  <div id="projects" class="container section scrollspy">
-    <div class="row">
-      <div class="col s12">
-        <h2 class="header center">Projects</h2>
+
+  <div class="red accent-1">
+    <div id="projects" class="section container scrollspy">
+      <div class="row">
+        <div class="col s12">
+          <h2 class="header center white-text">Projects</h2>
+        </div>
+      </div>
+      {% include 'index/partials/index-projects.volt' %}
+      {% set size = 6 %}
+      {% for key, project in projects %}
+        {% if key % 2 == 0 %}
+          <div class="row">
+          {% if key == projects|length - 1 %}
+            {% set size = 12 %}
+          {% endif %}
+        {% endif %}
+        <div class="col s12 l{{ size }}">
+          <div class="card">
+            <div class="card-content">
+              <span class="card-title black-text">{{ project[0] }}</span>
+
+              <p>{{ project[1] }}</p>
+            </div>
+            <div class="card-action">
+              {% if project[2] is iterable %}
+                {% for link in project[2] %}
+                  {{ link }}
+                {% endfor %}
+              {% endif %}
+              <span class="right grey-text">{{ project[3] }}</span>
+            </div>
+          </div>
+        </div>
+        {% if key % 2 != 0 or key == projects|length - 1 %}
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="progress no-pad red accent-2" style="margin: 0;">
+    <div class="indeterminate blue accent-2"></div>
+  </div>
+
+  <div class="blue accent-1">
+    <div id="languages" class="section container scrollspy">
+      <div class="row">
+        <div class="col s12">
+          <h2 class="header center white-text">Languages</h2>
+        </div>
+      </div>
+      {% include 'index/partials/index-languages.volt' %}
+      {% set size = 6 %}
+      {% for key, language in languages %}
+        {% if key % 2 == 0 %}
+          <div class="row">
+          {% if key == languages|length - 1 %}
+            {% set size = 12 %}
+          {% endif %}
+        {% endif %}
+        <div class="col s12 l{{ size }}">
+          <div class="card">
+            <div class="card-content">
+              <span class="card-title black-text">{{ language[0] }}</span>
+
+              <p>{{ language[1] }}</p>
+            </div>
+          </div>
+        </div>
+        {% if key % 2 != 0 or key == languages|length - 1 %}
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="progress no-pad blue accent-2" style="margin: 0;">
+    <div class="indeterminate pink accent-2"></div>
+  </div>
+
+  <div class="pink accent-1">
+    <div id="about-myself" class="section container scrollspy">
+      <div class="row">
+        <div class="col s12">
+          <h2 class="header center white-text">About myself</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s12">
+          <div class="card">
+            <div class="card-content">
+              <p>
+                My name is Tim Marshall, I'm a 20 year old Web Developer from the south coast of england. I'm a
+                Linux (Ubuntu Gnome) and Android (S3) user as I enjoy getting the most out of everything. I train
+                with the South Coast Martial Arts Jujitsu club 2-3 nights a week and use it as a break from the
+                virtual world - It's very tangible and keeps my mind completely occupied. I casually game with some
+                online games and enjoy the community side of things; hosting my own teamspeak server
+                (voice.codingbeard.com). I am currently volunteering for QuidditchUK as their website co-ordinator
+                building maintaining and upgrading their website.
+                <br/> <br/>
+                I'm really passionate about programming, it can keep me occupied for the majority of every day, with
+                constant challenges and obstacles to overcome - facinating logic and algorithms - I love it.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    {% set projects = [
-      [
-        'ZataBase',
-        'ZataBase is a relational database engine written in <a href="http://zephir-lang.com">Zephir</a> with an aim to
-        offer an object orientated interface to php scripts. I am using test driven development with PHPUnit testing.
-        It is currently in its infancy and is a project to learn about relational databases and Zephir, I am
-        doubtful it will ever become used by others.',
-        [
-          link_to('https://github.com/CodingBeard/ZataBase', 'Open source', false)
-        ],
-        '2015 - Current'
-      ],
-      [
-        'Phalconskeleton',
-        'Phalconskeleton is a skeleton application written in <a href="http://phalconphp.com/en/">Phalcon 2.0</a> for a
-        multi-module phalcon project. It has a user/permissions system, email templating, asset management, form builder,
-        content management, navigation manager, and various other plugins.',
-        [
-          link_to('https://phalconskeleton.codingbeard.com', 'Site', false),
-          link_to('https://github.com/CodingBeard/phalconskeleton', 'Open source', false)
-        ],
-        '2015 - Current'
-      ],
-      [
-        'QuidditchUK',
-        'QuidditchUK is the web presence of the UK quidditch association. Written in
-        <a href="http://phalconphp.com/en/">Phalcon 2.0</a> It delivers news and content; manages clubs, teams, members,
-        tournaments, matches and more. It has a complex user management and permissions system.',
-        [
-          link_to('https://quidditchuk.org', 'Site', false)
-        ],
-        '2014 - Current'
-      ],
-      [
-        'Chess',
-        'A two player chess game written in php, which can calculate possible moves, check, and checkmate. It has some code that was
-        working towards an AI player but was never finished. I hope to rewrite and host this online with knowledge
-        gained since first creating it. It was the most enjoyable project I have worked on.',
-        [
-          '<span class="grey-text">Not hosted, or available</span>'
-        ],
-        '2014'
-      ],
-      [
-        'YouthBase',
-        'My first attempt at OOP programming, an administration system written in php for the youth centre Close House Hereford.
-        I received mentoring while developing this. It was deployed to a Raspberry Pi but sadly was not used due to a lack of
-        support with the staff.',
-        [
-          '<span class="grey-text">Not hosted, or available</span>'
-        ],
-        '2013 - 2014'
-      ],
-      [
-        'PvM Drops Logger',
-        'A logging tool written in PHP for a type of gameplay in Runescape. It accesses public WikiaAPIs to collect data and stay up to
-        date. It is packaged in another open source project which allows for php desktop applications.',
-        [
-          link_to('https://dl.dropboxusercontent.com/u/197940643/pvmlogger/index.html', 'Site', false),
-          link_to('https://dl.dropboxusercontent.com/u/197940643/pvmlogger/files/source.tar.gz', 'Source', false)
-        ],
-        '2014'
-      ],
-      [
-        'Clantrack',
-        'The first programming I ever did. It has moved through multiple revisions from procedural PHP to the
-        now OOP MVC, and Javascript powered application it is.
-        Clantrack is an experience tracker for the online game Runescape written in <a href="http://phalconphp.com/en/">Phalcon 1.3.1</a>.
-        It extrapolates historic gains, activity levels, clan records, play time, and more from hourly information. It has an attached IRC
-        chat bot which can query the database using multiple commands, query online APIs, do unit conversion, and implements a factoid system.',
-        [
-          link_to('clantrack.com', 'Site', false)
-        ],
-        '2013 - Current'
-      ]
-    ] %}
-    {% set size = 6 %}
-    {% for key, project in projects %}
-      {% if key % 2 == 0 %}
-        <div class="row">
-        {% if key == projects|length - 1 %}
-          {% set size = 12 %}
-        {% endif %}
-      {% endif %}
-      <div class="col s12 l{{ size }}">
-        <div class="card grey darken-1">
-          <div class="card-content white-text">
-            <span class="card-title">{{ project[0] }}</span>
-            <p>{{ project[1] }}</p>
-          </div>
-          <div class="card-action">
-            {% if project[2] is iterable %}
-              {% for link in project[2] %}
-                {{ link }}
-              {% endfor %}
-            {% endif %}
-            <span class="right grey-text">{{ project[3] }}</span>
-          </div>
-        </div>
-      </div>
-      {% if key % 2 != 0 %}
-        </div>
-      {% endif %}
-    {% endfor %}
   </div>
-  <ul class="scroll-down hide-on-small-only">
+
+  <ul class="scroller hide-on-small-only">
     <li>
-      <a href="#page-top" class="">
-        <i class="mdi-navigation-expand-less small"></i>
+      <a href="#page-top" class="scroll">
+        <i class="mdi-editor-vertical-align-top small"></i>
       </a>
     </li>
     <li class="center">
@@ -158,9 +158,19 @@
         <i class="mdi-toggle-radio-button-off"></i>
       </a>
     </li>
+    <li class="center">
+      <a href="#languages" class="scroll-stop">
+        <i class="mdi-toggle-radio-button-off"></i>
+      </a>
+    </li>
+    <li class="center">
+      <a href="#about-myself" class="scroll-stop">
+        <i class="mdi-toggle-radio-button-off"></i>
+      </a>
+    </li>
     <li>
-      <a href="#projects" class="">
-        <i class="mdi-navigation-expand-more small"></i>
+      <a href="#about-myself" class="">
+        <i class="mdi-editor-vertical-align-bottom small"></i>
       </a>
     </li>
   </ul>
@@ -169,22 +179,19 @@
 {% block javascripts %}
   <script type="text/javascript">
     $(function () {
-      var positions = [
-        '#page-top',
-        '#projects'
-      ];
-      $('nav').sticky({topSpacing: 0});
 
       $('.scrollspy').on('scrollSpy:enter', function () {
-        console.log('enter:', $(this).attr('id'));
+
         $('.scroll-stop[href="#' + $(this).attr('id') + '"] > i')
             .removeClass('mdi-toggle-radio-button-off')
             .addClass('mdi-image-lens');
+
       }).on('scrollSpy:exit', function () {
-        console.log('exit:', $(this).attr('id'));
+
         $('.scroll-stop[href="#' + $(this).attr('id') + '"] > i')
             .removeClass('mdi-image-lens')
             .addClass('mdi-toggle-radio-button-off');
+
       }).scrollSpy();
     });
   </script>

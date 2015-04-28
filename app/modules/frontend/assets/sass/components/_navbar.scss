@@ -126,7 +126,7 @@ nav {
 
 }
 
-.is-sticky > nav {
+nav.pinned {
   background-color: rgba($primary-color, 0.8);
   @include transition(background-color 1s);
 }

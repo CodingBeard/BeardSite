@@ -90,16 +90,28 @@ fieldset {
     width: auto;
 }
 
-.scroll-down {
+.scroller {
     position: fixed;
     right: 20px;
     bottom: 50px;
     padding: 5px;
     width: 42px;
-    background-color: rgba(0,0,0,0.2);
+    background-color: rgba(0,0,0,0.3);
     -webkit-border-radius: 10px 10px 10px 10px;
     -moz-border-radius: 10px 10px 10px 10px;
     border-radius: 10px 10px 10px 10px;
+}
+
+.scroller > li > a {
+    color: #fff;
+}
+
+.plaque {
+    width: 100%;
+    padding: 10px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    -moz-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
 }
 
 /* ==========================================================================

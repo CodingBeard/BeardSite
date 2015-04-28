@@ -2900,7 +2900,8 @@ $(document).ready(function(){
             // Add position fixed (because its between top and bottom)
             if (options.top <= scrolled && options.bottom >= scrolled && !$(this).hasClass('pinned')) {
               removePinClasses($(this));
-              $(this).css('top', options.offset);
+              $(this).css('top', options.offset)
+              .css('z-index', 1000);
               $(this).addClass('pinned');
               // console.log("Pinned!", $(this));
             }

@@ -102,12 +102,16 @@ class Assets extends Plugin
     {
         $css = $this->assets->collection('css');
         foreach ($this->cssPaths as $cssPath) {
-            $css->addCss($this->sourcePath . $cssPath);
+            if (is_file($this->sourcePath . $cssPath)) {
+                $css->addCss($this->sourcePath . $cssPath);
+            }
         }
 
         $js = $this->assets->collection('js');
         foreach ($this->jsPaths as $jsPath) {
-            $js->addJs($this->sourcePath . $jsPath);
+            if (is_file($this->sourcePath . $jsPath)) {
+                $js->addJs($this->sourcePath . $jsPath);
+            }
         }
     }
 
@@ -117,27 +121,38 @@ class Assets extends Plugin
      */
     public function afterExecuteRoute()
     {
-
         $cssNeedsRefreshing = $jsNeedsRefreshing = false;
 
-        $cssLastModified = filemtime($this->config->application->publicDir . $this->cssPath);
-        foreach ($this->assets->get('css')->getResources() as $resource) {
-            if ($resource->getLocal()) {
-                if (($lastmod = filemtime($resource->getPath())) > $cssLastModified) {
-                    $cssNeedsRefreshing = true;
-                    $cssLastModified = $lastmod;
+        if (is_file($this->config->application->publicDir . $this->cssPath)) {
+            $cssLastModified = filemtime($this->config->application->publicDir . $this->cssPath);
+            foreach ($this->assets->get('css')->getResources() as $resource) {
+                if ($resource->getLocal()) {
+                    if (($lastmod = filemtime($resource->getPath())) > $cssLastModified) {
+                        $cssNeedsRefreshing = true;
+                        $cssLastModified = $lastmod;
+                    }
                 }
             }
         }
+        else {
+            $cssNeedsRefreshing = true;
+            $cssLastModified = time();
+        }
 
-        $jsLastModified = filemtime($this->config->application->publicDir . $this->jsPath);
-        foreach ($this->assets->get('js')->getResources() as $resource) {
-            if ($resource->getLocal()) {
-                if (($lastmod = filemtime($resource->getPath())) > $jsLastModified) {
-                    $jsNeedsRefreshing = true;
-                    $jsLastModified = $lastmod;
+        if (is_file($this->config->application->publicDir . $this->jsPath)) {
+            $jsLastModified = filemtime($this->config->application->publicDir . $this->jsPath);
+            foreach ($this->assets->get('js')->getResources() as $resource) {
+                if ($resource->getLocal()) {
+                    if (($lastmod = filemtime($resource->getPath())) > $jsLastModified) {
+                        $jsNeedsRefreshing = true;
+                        $jsLastModified = $lastmod;
+                    }
                 }
             }
+        }
+        else {
+            $jsNeedsRefreshing = true;
+            $jsLastModified = time();
         }
 
         if ($this->minify) {
