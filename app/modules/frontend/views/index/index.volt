@@ -11,20 +11,23 @@
 {% endblock %}
 
 {% block header %}
+<div id="page-top" class="scrollspy"></div>
   {% include "layouts/header.volt" %}
   {% include "layouts/navigation.volt" %}
 {% endblock %}
 
 {% block content %}
-  <div class="section no-pad-bot" id="index-banner">
-    <div class="container">
-      <h2 class="header center orange-text">CodingBeard</h2>
+  <div id="page-top" class="scrollspy">
+    <div class="section no-pad-bot" id="index-banner">
+      <div class="container">
+        <h2 class="header center orange-text">CodingBeard</h2>
 
-      <div class="row center">
-        <h5 class="header col s12 light">No stubble, just good code.</h5>
-      </div>
-      <div class="row center">
-        <a href="https://github.com/CodingBeard" class="btn-large orange">Github</a>
+        <div class="row center">
+          <h5 class="header col s12 light">No stubble, just good code.</h5>
+        </div>
+        <div class="row center">
+          <a href="https://github.com/CodingBeard" class="btn-large orange">Github</a>
+        </div>
       </div>
     </div>
   </div>
@@ -118,7 +121,7 @@
           {% set size = 12 %}
         {% endif %}
       {% endif %}
-      <div class="col s12 m{{ size }}">
+      <div class="col s12 l{{ size }}">
         <div class="card grey darken-1">
           <div class="card-content white-text">
             <span class="card-title">{{ project[0] }}</span>
@@ -139,13 +142,50 @@
       {% endif %}
     {% endfor %}
   </div>
+  <ul class="scroll-down hide-on-small-only">
+    <li>
+      <a href="#page-top" class="">
+        <i class="mdi-navigation-expand-less small"></i>
+      </a>
+    </li>
+    <li class="center">
+      <a href="#page-top" class="scroll-stop">
+        <i class="mdi-toggle-radio-button-off"></i>
+      </a>
+    </li>
+    <li class="center">
+      <a href="#projects" class="scroll-stop">
+        <i class="mdi-toggle-radio-button-off"></i>
+      </a>
+    </li>
+    <li>
+      <a href="#projects" class="">
+        <i class="mdi-navigation-expand-more small"></i>
+      </a>
+    </li>
+  </ul>
 {% endblock %}
 
 {% block javascripts %}
   <script type="text/javascript">
     $(function () {
+      var positions = [
+        '#page-top',
+        '#projects'
+      ];
       $('nav').sticky({topSpacing: 0});
-      $('.scrollspy').scrollSpy();
+
+      $('.scrollspy').on('scrollSpy:enter', function () {
+        console.log('enter:', $(this).attr('id'));
+        $('.scroll-stop[href="#' + $(this).attr('id') + '"] > i')
+            .removeClass('mdi-toggle-radio-button-off')
+            .addClass('mdi-image-lens');
+      }).on('scrollSpy:exit', function () {
+        console.log('exit:', $(this).attr('id'));
+        $('.scroll-stop[href="#' + $(this).attr('id') + '"] > i')
+            .removeClass('mdi-image-lens')
+            .addClass('mdi-toggle-radio-button-off');
+      }).scrollSpy();
     });
   </script>
 {% endblock %}

@@ -90,6 +90,18 @@ fieldset {
     width: auto;
 }
 
+.scroll-down {
+    position: fixed;
+    right: 20px;
+    bottom: 50px;
+    padding: 5px;
+    width: 42px;
+    background-color: rgba(0,0,0,0.2);
+    -webkit-border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    border-radius: 10px 10px 10px 10px;
+}
+
 /* ==========================================================================
    Helper classes
    ========================================================================== */

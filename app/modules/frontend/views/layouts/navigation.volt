@@ -44,7 +44,7 @@
     <ul id="nav-mobile" class="side-nav hide-on-large-only">
       {% if _frontendnav.id %}
         {% for navlink in _frontendnav.getNavlinks('level = 0') %}
-          {% if navlink.children is iterable %}
+          {% if navlink.children.count() %}
             <li class="no-padding">
               <ul class="collapsible">
                 <li class="bold">
@@ -54,7 +54,11 @@
                     <ul>
                       {% for child in navlink.children %}
                         <li>
-                          <a href="{{ url(child.link) }}">{{ child.label }}</a>
+                          {% if child.link[0] == '#' %}
+                            <a href="{{ child.link }}">{{ child.label }}</a>
+                          {% else %}
+                            <a href="{{ url(child.link) }}">{{ child.label }}</a>
+                          {% endif %}
                         </li>
                       {% endfor %}
                     </ul>
@@ -64,7 +68,11 @@
             </li>
           {% else %}
             <li class="bold">
-              <a href="{{ url(navlink.link) }}">{{ navlink.label }}</a>
+              {% if navlink.link[0] == '#' %}
+                <a href="{{ navlink.link }}">{{ navlink.label }}</a>
+              {% else %}
+                <a href="{{ url(navlink.link) }}">{{ navlink.label }}</a>
+              {% endif %}
             </li>
           {% endif %}
         {% endfor %}
@@ -72,7 +80,7 @@
       {% set _footernav = navbarObject.findFirst('name = "Footer"') %}
       {% if _footernav.id %}
         {% for navlink in _footernav.getNavlinks('level = 0') %}
-          {% if navlink.children is iterable %}
+          {% if navlink.children.count() %}
             <li class="no-padding">
               <ul class="collapsible">
                 <li class="bold">
@@ -82,7 +90,11 @@
                     <ul>
                       {% for child in navlink.children %}
                         <li>
-                          <a href="{{ url(child.link) }}">{{ child.label }}</a>
+                          {% if child.link[0] == '#' %}
+                            <a href="{{ child.link }}">{{ child.label }}</a>
+                          {% else %}
+                            <a href="{{ url(child.link) }}">{{ child.label }}</a>
+                          {% endif %}
                         </li>
                       {% endfor %}
                     </ul>
@@ -92,7 +104,11 @@
             </li>
           {% else %}
             <li class="bold">
-              <a href="{{ url(navlink.link) }}">{{ navlink.label }}</a>
+              {% if navlink.link[0] == '#' %}
+                <a href="{{ navlink.link }}">{{ navlink.label }}</a>
+              {% else %}
+                <a href="{{ url(navlink.link) }}">{{ navlink.label }}</a>
+              {% endif %}
             </li>
           {% endif %}
         {% endfor %}
