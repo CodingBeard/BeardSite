@@ -23,7 +23,7 @@
     system, email templating, asset management, form builder, content management, navigation manager, and various other
     plugins.',
     [
-      link_to('https://phalconskeleton.codingbeard.com', 'Site', false),
+      link_to('http://phalconskeleton.codingbeard.com', 'Site', false),
       link_to('https://github.com/CodingBeard/phalconskeleton', 'Open source', false)
     ],
     '2015 - Current'
@@ -78,7 +78,7 @@
     play time, and more from hourly information. It has an attached IRC chat bot which can query the database using
     multiple commands, query online APIs, do unit conversion, and implements a factoid system.',
     [
-      link_to('clantrack.com', 'Site', false)
+      link_to('http://clantrack.com', 'Site', false)
     ],
     '2013 - Current'
   ]
