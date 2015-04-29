@@ -52,7 +52,7 @@
 {% endblock %}
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <div id="cookiebanner"
-     data-bg="#a81826"
+     data-bg="#7f7159"
      data-fg="#fff"
      data-height="32px"
      data-message="We use cookies to improve your browsing experience, by continuing to use this site you accept our use of cookies.">
