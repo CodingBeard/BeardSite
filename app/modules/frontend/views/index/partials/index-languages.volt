@@ -20,7 +20,7 @@
   ],
   [
     'JavaScript',
-    'As the syntax of Javascript is quite similar to PHP it was easy to pick up. I am competant when working with the
+    'As the syntax of Javascript is quite similar to PHP it was easy to pick up. I am competent when working with the
      jQuery set of libraries and modifying 3rd party plugins to integrate with projects.'
   ],
   [

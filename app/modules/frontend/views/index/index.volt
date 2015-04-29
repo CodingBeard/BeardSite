@@ -136,11 +136,11 @@
                 with the South Coast Martial Arts Jujitsu club 2-3 nights a week and use it as a break from the
                 virtual world - It's very tangible and keeps my mind completely occupied. I casually game with some
                 online games and enjoy the community side of things; hosting my own teamspeak server
-                (voice.codingbeard.com). I am currently volunteering for QuidditchUK as their website co-ordinator
-                building maintaining and upgrading their website.
+                (voice.codingbeard.com). I am currently volunteering for QuidditchUK as their Website Co-Ordinator,
+                building, maintaining, and upgrading their website.
                 <br/> <br/>
                 I'm really passionate about programming, it can keep me occupied for the majority of every day, with
-                constant challenges and obstacles to overcome - facinating logic and algorithms - I love it.
+                constant challenges and obstacles to overcome - fascinating logic and algorithms - I love it.
               </p>
             </div>
           </div>
