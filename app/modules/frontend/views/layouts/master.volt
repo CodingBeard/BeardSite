@@ -73,7 +73,7 @@
     e.src = '//www.google-analytics.com/analytics.js';
     r.parentNode.insertBefore(e, r)
   }(window, document, 'script', 'ga'));
-  ga('create', 'UA-XXXXX-X');
+  ga('create', '{{ config.analytics.key }}');
   ga('send', 'pageview');
 </script>
 </body>

@@ -41,11 +41,11 @@
   [
     'Chess',
     'A two player chess game written in <a href="http://php.net">PHP</a>, which can calculate possible moves, check,
-    and checkmate. It has some code that was working towards an AI player but was never finished. I hope to rewrite
-    and host this online with knowledge gained since first creating it. It was the most enjoyable project I have
-    worked on.',
+    and checkmate. It has some code that was working towards an AI player but was never finished. I am currently
+    rewriting this.',
     [
-      '<span class="grey-text">Not hosted, or available</span>'
+      link_to('http://chess.codingbeard.com', 'Site', false),
+      link_to('https://github.com/CodingBeard/Chess', 'Open source', false)
     ],
     '2014'
   ],
