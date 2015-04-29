@@ -116,13 +116,20 @@
     <div id="about-myself" class="section container scrollspy">
       <div class="row">
         <div class="col s12">
-          <h2 class="header center white-text">About myself</h2>
+          <h2 class="header center white-text">About</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s12 center">
+          <img class="responsive-img" src="{{ url('img/beard.png') }}" alt="CodingBeard" style="max-width: 500px;"/>
         </div>
       </div>
       <div class="row">
         <div class="col s12">
           <div class="card">
             <div class="card-content">
+              <span class="card-title black-text">Myself</span>
+
               <p>
                 My name is Tim Marshall, I'm a 20 year old Web Developer from the south coast of england. I'm a
                 Linux (Ubuntu Gnome) and Android (S3) user as I enjoy getting the most out of everything. I train
@@ -140,6 +147,22 @@
         </div>
       </div>
     </div>
+  </div>
+
+  <div class="progress no-pad white" style="margin: 0;">
+    <div class="indeterminate grey"></div>
+  </div>
+
+  <div id="contact" class="section container scrollspy">
+    <div class="row">
+      <div class="col s12">
+        <h2 class="header center">Contact</h2>
+      </div>
+    </div>
+    <div id="flash-container">
+      {{ flashSession.output() }}
+    </div>
+    {{ forms.getHtml() }}
   </div>
 
   <ul class="scroller hide-on-small-only">
@@ -168,8 +191,13 @@
         <i class="mdi-toggle-radio-button-off"></i>
       </a>
     </li>
+    <li class="center">
+      <a href="#contact" class="scroll-stop">
+        <i class="mdi-toggle-radio-button-off"></i>
+      </a>
+    </li>
     <li>
-      <a href="#about-myself" class="">
+      <a href="#contact" class="">
         <i class="mdi-editor-vertical-align-bottom small"></i>
       </a>
     </li>
