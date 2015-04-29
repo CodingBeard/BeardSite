@@ -121,7 +121,7 @@
       </div>
       <div class="row">
         <div class="col s12 center">
-          <img class="responsive-img" src="{{ url('img/beard.png') }}" alt="CodingBeard" style="max-width: 500px;"/>
+          <img class="responsive-img" src="{{ url('img/beard.png') }}" alt="CodingBeard" style="width: 500px"/>
         </div>
       </div>
       <div class="row">
