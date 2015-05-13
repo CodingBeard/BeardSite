@@ -40,9 +40,9 @@
   ],
   [
     'Chess',
-    'A two player chess game written in <a href="http://php.net">PHP</a>, which can calculate possible moves, check,
-    and checkmate. It has some code that was working towards an AI player but was never finished. I am currently
-    rewriting this.',
+    'A two player chess game written in <a href="http://zephir-lang.com">Zephir</a>,
+    <a href="http://phalconphp.com/en/">Phalcon 2.0</a>, making use of HTML5 Canvases and Websockets. I intend for
+    local, online, and AI game types with multiple levels of difficulty. I am enjoying working on this project.',
     [
       link_to('http://chess.codingbeard.com', 'Site', false),
       link_to('https://github.com/CodingBeard/Chess', 'Open source', false)

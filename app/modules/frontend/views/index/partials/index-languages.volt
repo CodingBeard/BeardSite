@@ -25,13 +25,13 @@
   ],
   [
     'Zephir',
-    'Zephir is a semi-statically typed language with somewhat similar syntax to php. It compiles into C code and is
-    attached to PHP as an extension. I am currently learning this language with my ZataBase project.'
+    'Zephir is a semi-statically typed language with somewhat similar syntax to PHP. It compiles into C code and is
+    attached to PHP as an extension. I am currently learning this language with my ZataBase and Chess projects.'
   ],
   [
     'HTML/CSS/SASS',
-    'Web development goes hand in hand with html and css. I attempt to write HTML5 valid code, make use of CSS3
-    functions and keep an eye out for browser compatibility issues. I recently started using SASS which is very
+    'Web development goes hand in hand with HTML and CSS. I attempt to write HTML5 valid code, make use of CSS3
+    features and keep an eye out for browser compatibility issues. I recently started using SASS which is very
     helpful. I have experience with both Bootstrap and Materializecss frameworks.'
   ]
 ] %}
