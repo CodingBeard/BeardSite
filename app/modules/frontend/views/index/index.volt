@@ -12,7 +12,6 @@
 
 {% block header %}
   <div id="page-top" class="scrollspy"></div>
-  {% include "layouts/header.volt" %}
   {% include "layouts/navigation.volt" %}
 {% endblock %}
 
