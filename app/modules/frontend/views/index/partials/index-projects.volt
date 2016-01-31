@@ -9,7 +9,7 @@
     'PhREST',
     'PhREST is a RESTful API framework written in <a href="http://php.net">PHP</a> and
     <a href="http://phalconphp.com/en/">Phalcon 1.3.4</a>. I took over development of it when I started work with
-    my current employer. It serves a number of applications in our company's tech sphere, from social management systems,
+    my current employer. It serves a number of applications in our company\'s tech sphere, from social management systems,
     website building tools, to VPN clients for Windows/Mac/iOS/Android',
     [
       link_to('https://github.com/phrest/api', 'Open source', false)
