@@ -130,13 +130,13 @@
               <span class="card-title black-text">Myself</span>
 
               <p>
-                My name is Tim Marshall, I'm a 20 year old Web Developer from the south coast of England. I'm a
-                Linux (Ubuntu Gnome) and Android (S3) user as I enjoy getting the most out of everything. I train
+                My name is Tim Marshall, I'm a 21 year old Web Developer from the south coast of England. I'm a
+                Linux (Ubuntu Gnome) and Android (G3) user as I enjoy getting the most out of everything. I train
                 with the South Coast Martial Arts Jujitsu club 2-3 nights a week and use it as a break from the
-                virtual world - It's very tangible and keeps my mind completely occupied. I casually game with some
-                online games and enjoy the community side of things; hosting my own teamspeak server
-                (voice.codingbeard.com). I am currently volunteering for QuidditchUK as their Website Co-Ordinator,
-                building, maintaining, and upgrading their website.
+                virtual world - It's very tangible and keeps my mind completely occupied. I casually game online
+                and enjoy the community side of things; hosting my own teamspeak server
+                (voice.codingbeard.com). I am currently employed by Just Develop It in Fareham, working mostly with
+                API integrations to offer addons/upsells to existing customers.
                 <br/> <br/>
                 I'm really passionate about programming, it can keep me occupied for the majority of every day, with
                 constant challenges and obstacles to overcome - fascinating logic and algorithms - I love it.
